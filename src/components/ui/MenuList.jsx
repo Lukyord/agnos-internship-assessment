@@ -9,7 +9,7 @@ export default function MenuList({ isOpen }) {
         <li
           key={index}
           className={`flex flex-nowrap items-center text-gray-200 text-sm gap-x-[2rem] 
-          cursor-pointer hover:bg-white hover:bg-opacity-25 rounded-md p-2 h-[3rem]`}
+          cursor-pointer hover:bg-white hover:bg-opacity-25 rounded-md p-2 my-[0.5rem]`}
         >
           <img
             src={`../../../assets/icons/${menu.src}.png`}
