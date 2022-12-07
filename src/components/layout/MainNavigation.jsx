@@ -1,15 +1,21 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+
+import Logo from "../ui/Logo";
+import MenuList from "../ui/MenuList";
+import NavBarArrow from "../ui/NavBarArrow";
 
 export default function MainNavigation() {
+  const [isNavBarOpen, setIsNavBarOpen] = useState(false);
+
   return (
-    <div className="flex h-[6rem] w-screen justify-start items-center px-[1rem] border-b-2 shadow-xl">
-      <Link to="/">
-        <h1 className="text-6xl italic font-extrabold px-[1rem]">
-          <text className="text-blue-600">BASIc</text>{" "}
-          <text className="text-cyan-600">DIAGNOSEs</text>
-        </h1>
-      </Link>
-      <p>search bar</p>
+    <div
+      className={`${
+        isNavBarOpen ? "w-[25rem]" : "w-[8rem]"
+      } duration-300 h-screen bg-blue-900 relative`}
+    >
+      <NavBarArrow setOpen={setIsNavBarOpen} isOpen={isNavBarOpen} />
+      <Logo setOpen={setIsNavBarOpen} isOpen={isNavBarOpen} />
+      <MenuList isOpen={isNavBarOpen} />
     </div>
   );
 }

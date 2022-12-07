@@ -1,0 +1,7 @@
+{
+  "Menus": [
+    { "title": "Search", "src": "search" },
+    { "title": "Digestive System", "src": "intestine" },
+    { "title": "Hands and Fingers", "src": "hand" }
+  ]
+}
