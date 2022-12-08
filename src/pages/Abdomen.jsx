@@ -1,5 +1,6 @@
 import AbdomenImages from "../../assets/images/abdomen/AbdomenImages";
-import voronoi from "../../assets/voronoi/voronoi_svg_export.svg";
+import voronoi_img from "../../assets/voronoi/voronoi_svg_export.svg";
+import voronoi from "../components/voronoi/voronoi";
 
 import { useState, useEffect } from "react";
 
@@ -41,7 +42,7 @@ export default function Abdomen() {
           />
           <div className="absolute border-2 w-[10rem] h-[11rem] left-[7rem] bottom-[9.25rem]">
             {/* (493, 300) (648, 473) */}
-            <img src={voronoi} />
+            <img src={voronoi_img} />
           </div>
         </div>
       </div>
@@ -50,4 +51,22 @@ export default function Abdomen() {
       </button>
     </div>
   );
+}
+
+{
+  /* <Voronoi
+        extent={[
+          [493, 300],
+          [648, 473],
+        ]}
+        nodes={[
+          { x: 790, y: 360, style: { stroke: "blue" } },
+          { x: 823, y: 341 },
+          { x: 852, y: 362 },
+          { x: 820, y: 393 },
+          { x: 791, y: 417 },
+          { x: 820, y: 436 },
+          { x: 859, y: 416 },
+        ]}
+      /> */
 }
