@@ -1,7 +1,7 @@
 {
   "Menus": [
-    { "title": "Search", "src": "search" },
-    { "title": "Digestive System", "src": "intestine" },
-    { "title": "Hands and Fingers", "src": "hand" }
+    { "title": "ค้นหาอาการ", "src": "search" },
+    { "title": "ท้อง", "src": "intestine" },
+    { "title": "มือและนิ้ว", "src": "hand" }
   ]
 }
