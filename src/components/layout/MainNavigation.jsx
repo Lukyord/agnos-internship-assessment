@@ -7,7 +7,7 @@ import Symtomps from "../ui/Symtomps";
 
 export default function MainNavigation() {
   const [isNavBarOpen, setIsNavBarOpen] = useState(false);
-  const [symtomp, setSymtomp] = useState([]);
+  const [symtomps, setSymtomps] = useState([]);
 
   return (
     <div
@@ -17,8 +17,12 @@ export default function MainNavigation() {
     >
       <NavBarArrow setOpen={setIsNavBarOpen} isOpen={isNavBarOpen} />
       <Logo isOpen={isNavBarOpen} />
-      <MenuList isOpen={isNavBarOpen} />
-      <Symtomps isOpen={isNavBarOpen} symtomp={symtomp} />
+      <MenuList
+        setSymtomps={setIsNavBarOpen}
+        isOpen={isNavBarOpen}
+        symtomps={symtomps}
+      />
+      <Symtomps isOpen={isNavBarOpen} symtomps={symtomps} />
     </div>
   );
 }

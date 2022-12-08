@@ -1,0 +1,2 @@
+{ "title": "ค้นหาอาการ", "src": "search", "link": "/" },
+{ "title": "ผลการตรวจ", "src": "result", "link": "/result" }
