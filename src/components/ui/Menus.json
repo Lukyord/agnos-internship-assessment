@@ -1,7 +1,8 @@
 {
   "Menus": [
-    { "title": "ค้นหาอาการ", "src": "search" },
-    { "title": "ท้อง", "src": "intestine" },
-    { "title": "มือและนิ้ว", "src": "hand" }
+    { "title": "ค้นหาอาการ", "src": "search", "link": "/" },
+    { "title": "ช่วงท้อง", "src": "intestine", "link": "/abdomen" },
+    { "title": "มือและนิ้ว", "src": "hand", "link": "/hand" },
+    { "title": "ผลการตรวจ", "src": "result", "link": "/result" }
   ]
 }
