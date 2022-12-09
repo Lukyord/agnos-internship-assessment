@@ -26,10 +26,10 @@ export default function voronoi(x, y) {
     return d === Math.min.apply(null, distance);
   });
 
+  console.log(index);
   return index;
 }
 
-voronoi(500, 400);
-
+// voronoi(867, 437);
 // [493, 300],
 // [648, 473],
