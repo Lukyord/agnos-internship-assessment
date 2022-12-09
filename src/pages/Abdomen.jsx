@@ -5,6 +5,7 @@ import { isNavBarOpenContext } from "../Helper/Context";
 
 import { useContext, useState } from "react";
 import Active from "../components/abdomen/Active";
+import Highlight from "../components/abdomen/Highlight";
 
 export default function Abdomen() {
   const [zone, setZone] = useState(-1);
@@ -26,12 +27,7 @@ export default function Abdomen() {
             className="absolute object-contain"
           />
           <Active zone={zone} mouseInBox={mouseInBox} />
-          {zone == 2 && mouseInBox && !isNavBarOpen && (
-            <img
-              src={AbdomenImages.epigastriumHighlight}
-              className="absolute object-contain z-1"
-            />
-          )}
+          <Highlight zone={zone} mouseInBox={mouseInBox} />
           <AbdomenVoronoi
             zone={zone}
             setZone={setZone}
