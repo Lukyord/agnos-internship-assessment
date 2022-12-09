@@ -4,6 +4,7 @@ import AbdomenVoronoi from "../components/abdomen/AbdomenVoronoi";
 import { isNavBarOpenContext } from "../Helper/Context";
 
 import { useContext, useState } from "react";
+import Active from "../components/abdomen/Active";
 
 export default function Abdomen() {
   const [zone, setZone] = useState(-1);
@@ -15,7 +16,7 @@ export default function Abdomen() {
       className="h-screen w-full bg-gray-400 flex flex-col justify-around items-center py-[2rem] 
     bg-gradient-to-r from-blue-900 to-blue-400 "
     >
-      <div className="flex flex-col items-center h-[37rem] bg-white rounded-2xl shadow-2xl">
+      <div className="flex flex-col items-center w-[45rem] h-[37rem] bg-white rounded-2xl shadow-2xl">
         <h1 className="font-noto py-[2rem] text-4xl">
           คุณปวดท้องบริเวณไหนมากที่สุด?
         </h1>
@@ -24,22 +25,13 @@ export default function Abdomen() {
             src={AbdomenImages.defaultAbs}
             className="absolute object-contain"
           />
-          {zone == 2 && mouseInBox && !isNavBarOpen && (
-            <img
-              src={AbdomenImages.epigastriumActive}
-              className="absolute object-contain z-1"
-            />
-          )}
+          <Active zone={zone} mouseInBox={mouseInBox} />
           {zone == 2 && mouseInBox && !isNavBarOpen && (
             <img
               src={AbdomenImages.epigastriumHighlight}
               className="absolute object-contain z-1"
             />
           )}
-          <img
-            src={AbdomenImages.llqActive}
-            className="absolute z-10 object-contain"
-          />
           <AbdomenVoronoi
             zone={zone}
             setZone={setZone}
