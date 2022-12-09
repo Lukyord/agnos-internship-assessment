@@ -4,10 +4,13 @@ import voronoi from "../voronoi/voronoi";
 
 import { useState, useEffect } from "react";
 
-export default function AbdomenVoronoi() {
+export default function useAbdomenVoronoi({
+  zone,
+  setZone,
+  mouseInBox,
+  setMouseInBox,
+}) {
   const [mousePos, setMousePos] = useState({});
-  const [mouseInBox, setMouseInBox] = useState(false);
-  const [zone, setZone] = useState(-1);
 
   useEffect(() => {
     const handleMouseMove = (event) => {
@@ -44,6 +47,3 @@ export default function AbdomenVoronoi() {
     </div>
   );
 }
-
-// [493, 300],
-// [648, 473],

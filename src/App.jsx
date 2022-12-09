@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import Layout from "./components/layout/Layout";
 import Hand from "./pages/Hand";
-
 import Home from "./pages/Home";
 import Abdomen from "./pages/Abdomen";
 import Result from "./pages/Result";
