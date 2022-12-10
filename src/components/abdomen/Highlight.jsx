@@ -22,7 +22,7 @@ export default function Highlight({ zone, mouseInBox }) {
           key={index}
           src={highlight.image}
           className={`absolute object-contain z-1 ${
-            !(zone == index + 1 && mouseInBox && !isNavBarOpen) && "hidden"
+            !(zone == index + 1 && mouseInBox && !isNavBarOpen) && "invisible"
           }`}
         />
       ))}

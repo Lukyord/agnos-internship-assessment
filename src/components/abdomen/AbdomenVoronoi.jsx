@@ -9,6 +9,8 @@ export default function useAbdomenVoronoi({
   setZone,
   mouseInBox,
   setMouseInBox,
+  clickedZone,
+  setClickedZone,
 }) {
   const [mousePos, setMousePos] = useState({});
 
@@ -28,12 +30,38 @@ export default function useAbdomenVoronoi({
       }
     };
 
+    const handleMouseClick = () => {
+      if (mouseInBox) {
+        setClickedZone((prevState) =>
+          prevState.map((item, idx) => (idx === zone - 1 ? !item : item))
+        );
+      }
+    };
+    //   if (mouseInBox) {
+    //     setClickedZone(
+    //       clickedZone.map((c) => {
+    //         if (c.id === zone) {
+    //           return { ...c, clicked: !c.clicked };
+    //         } else {
+    //           return c;
+    //         }
+    //       })
+    //     );
+    //     console.log(clickedZone);
+    //   }
+    // };
+    //   const HanldeCheck = (index) => {
+    //     setcheckBoxState(prevState => prevState.map((item, idx) => idx === index ? !item : item))
+    // };
+
     window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("click", handleMouseClick);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("click", handleMouseClick);
     };
-  }, [mousePos]);
+  });
 
   return (
     <div className="absolute border-2 w-[10rem] h-[11rem] left-[7rem] bottom-[9.25rem]">
@@ -43,6 +71,11 @@ export default function useAbdomenVoronoi({
       </b>
       <b className="pl-[5rem]">{mouseInBox.toString()}</b>
       <p className="pl-[6rem] absolute">{zone}</p>
+      <p className="pl-[15rem] absolute whitespace-nowrap">
+        {clickedZone.map((c) => (
+          <li>{c.toString()}</li>
+        ))}
+      </p>
     </div>
   );
 }

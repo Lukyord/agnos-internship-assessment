@@ -1,16 +1,23 @@
 import AbdomenImages from "../../assets/images/abdomen/AbdomenImages";
 
 import AbdomenVoronoi from "../components/abdomen/AbdomenVoronoi";
-import { isNavBarOpenContext } from "../Helper/Context";
 
-import { useContext, useState } from "react";
+import { useState } from "react";
 import Active from "../components/abdomen/Active";
 import Highlight from "../components/abdomen/Highlight";
 
 export default function Abdomen() {
   const [zone, setZone] = useState(-1);
   const [mouseInBox, setMouseInBox] = useState(false);
-  const { isNavBarOpen, setIsNavBarOpen } = useContext(isNavBarOpenContext);
+  const [clickedZone, setClickedZone] = useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
 
   return (
     <div
@@ -26,13 +33,23 @@ export default function Abdomen() {
             src={AbdomenImages.defaultAbs}
             className="absolute object-contain"
           />
-          <Active zone={zone} mouseInBox={mouseInBox} />
-          <Highlight zone={zone} mouseInBox={mouseInBox} />
+          <Active
+            zone={zone}
+            mouseInBox={mouseInBox}
+            clickedZone={clickedZone}
+          />
+          <Highlight
+            zone={zone}
+            mouseInBox={mouseInBox}
+            clickedZone={clickedZone}
+          />
           <AbdomenVoronoi
             zone={zone}
             setZone={setZone}
             mouseInBox={mouseInBox}
             setMouseInBox={setMouseInBox}
+            clickedZone={clickedZone}
+            setClickedZone={setClickedZone}
           />
         </div>
       </div>
