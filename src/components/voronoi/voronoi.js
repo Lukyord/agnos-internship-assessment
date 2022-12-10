@@ -26,7 +26,6 @@ export default function voronoi(x, y) {
     return d === Math.min.apply(null, distance);
   });
 
-  console.log(index);
   return index;
 }
 

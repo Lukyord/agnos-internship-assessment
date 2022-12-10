@@ -13,7 +13,7 @@ export default function MainNavigation({ isNavBarOpen, setIsNavBarOpen }) {
       <div
         className={`${
           isNavBarOpen ? "w-[30rem]" : "w-[8rem]"
-        } duration-300 h-screen bg-blue-900 relative shadow-2xl z-10`}
+        } duration-300 h-screen bg-blue-900 relative shadow-2xl z-20`}
       >
         <NavBarArrow setOpen={setIsNavBarOpen} isOpen={isNavBarOpen} />
         <Logo isOpen={isNavBarOpen} />

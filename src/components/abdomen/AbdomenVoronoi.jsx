@@ -23,7 +23,6 @@ export default function useAbdomenVoronoi({
       ) {
         setMouseInBox(true);
         setZone(voronoi(mousePos.x, mousePos.y) + 1);
-        console.log(voronoi(mousePos.x, mousePos.y) + 1);
       } else {
         setMouseInBox(false);
       }
