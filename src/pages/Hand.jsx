@@ -3,6 +3,7 @@ import HandImages from "../../assets/images/hand/HandImages";
 import HandVoronoi from "../components/hand/HandVoronoi";
 
 import { useState } from "react";
+import Highlight from "../components/hand/Highlight";
 
 export default function Hand() {
   const [zone, setZone] = useState(-1);
@@ -23,6 +24,7 @@ export default function Hand() {
             src={HandImages.defaultFingers}
             className="absolute object-contain"
           />
+          <Highlight clickedZone={clickedZone} />
           <HandVoronoi
             zone={zone}
             setZone={setZone}

@@ -1,10 +1,6 @@
 import AbdomenImages from "../../../assets/images/abdomen/AbdomenImages";
 
-import { isNavBarOpenContext } from "../../Helper/Context";
-import { useContext } from "react";
-
-export default function Highlight({ zone, mouseInBox, clickedZone }) {
-  const { isNavBarOpen, setIsNavBarOpen } = useContext(isNavBarOpenContext);
+export default function Highlight({ clickedZone }) {
   const AbdomenHighlights = [
     { image: AbdomenImages.ruqHighlight },
     { image: AbdomenImages.epigastriumHighlight },

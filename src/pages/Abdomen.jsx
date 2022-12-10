@@ -33,11 +33,7 @@ export default function Abdomen() {
             clickedZone={clickedZone}
             isAllActive={isAllActive}
           />
-          <Highlight
-            zone={zone}
-            mouseInBox={mouseInBox}
-            clickedZone={clickedZone}
-          />
+          <Highlight clickedZone={clickedZone} />
           <AbdomenVoronoi
             zone={zone}
             setZone={setZone}
