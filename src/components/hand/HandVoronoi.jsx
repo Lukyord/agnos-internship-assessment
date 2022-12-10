@@ -11,6 +11,7 @@ export default function HandVoronoi({
   setMouseInBox,
   clickedZone,
   setClickedZone,
+  setIsOthers,
 }) {
   const [mousePos, setMousePos] = useState({});
 
@@ -33,8 +34,9 @@ export default function HandVoronoi({
     const handleMouseClick = () => {
       if (mouseInBox) {
         setClickedZone((prevState) =>
-          prevState.map((item, idx) => (idx === zone - 1 ? !item : item))
+          prevState.map((item, idx) => (idx === zone - 1 ? !item : false))
         );
+        setIsOthers(false);
       }
     };
 

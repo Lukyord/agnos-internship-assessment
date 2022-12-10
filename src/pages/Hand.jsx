@@ -4,11 +4,14 @@ import HandVoronoi from "../components/hand/HandVoronoi";
 
 import { useState } from "react";
 import Highlight from "../components/hand/Highlight";
+import Active from "../components/hand/Active";
+import Others from "../components/hand/Others";
 
 export default function Hand() {
   const [zone, setZone] = useState(-1);
   const [mouseInBox, setMouseInBox] = useState(false);
   const [clickedZone, setClickedZone] = useState(Array(3).fill(false));
+  const [isOthers, setIsOthers] = useState(false);
 
   return (
     <div
@@ -24,6 +27,11 @@ export default function Hand() {
             src={HandImages.defaultFingers}
             className="absolute object-contain"
           />
+          <Active
+            zone={zone}
+            mouseInBox={mouseInBox}
+            clickedZone={clickedZone}
+          />
           <Highlight clickedZone={clickedZone} />
           <HandVoronoi
             zone={zone}
@@ -32,6 +40,12 @@ export default function Hand() {
             setMouseInBox={setMouseInBox}
             clickedZone={clickedZone}
             setClickedZone={setClickedZone}
+            setIsOthers={setIsOthers}
+          />
+          <Others
+            setClickedZone={setClickedZone}
+            isOthers={isOthers}
+            setIsOthers={setIsOthers}
           />
         </div>
       </div>

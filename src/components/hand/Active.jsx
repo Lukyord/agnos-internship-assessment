@@ -1,23 +1,19 @@
 import { isNavBarOpenContext } from "../../Helper/Context";
 import { useContext } from "react";
 
-import AbdomenImages from "../../../assets/images/abdomen/AbdomenImages";
+import HandImages from "../../../assets/images/hand/HandImages";
 
 export default function Active({ zone, mouseInBox, clickedZone, isAllActive }) {
   const { isNavBarOpen, setIsNavBarOpen } = useContext(isNavBarOpenContext);
-  const AbdomenActives = [
-    { image: AbdomenImages.ruqActive },
-    { image: AbdomenImages.epigastriumActive },
-    { image: AbdomenImages.luqActive },
-    { image: AbdomenImages.umbilicusActive },
-    { image: AbdomenImages.rlqActive },
-    { image: AbdomenImages.suprapubicActive },
-    { image: AbdomenImages.llqActive },
+  const HandHighlights = [
+    { image: HandImages.dipActive },
+    { image: HandImages.pipActive },
+    { image: HandImages.mcpActive },
   ];
 
   return (
     <div>
-      {AbdomenActives.map((active, index) => (
+      {HandHighlights.map((active, index) => (
         <div>
           <img
             key={index}
