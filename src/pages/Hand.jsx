@@ -1,6 +1,14 @@
 import HandImages from "../../assets/images/hand/HandImages";
 
+import HandVoronoi from "../components/hand/HandVoronoi";
+
+import { useState } from "react";
+
 export default function Hand() {
+  const [zone, setZone] = useState(-1);
+  const [mouseInBox, setMouseInBox] = useState(false);
+  const [clickedZone, setClickedZone] = useState(Array(3).fill(false));
+
   return (
     <div
       className="h-screen w-full bg-gray-400 flex flex-col justify-around items-center py-[2rem] 
@@ -14,6 +22,14 @@ export default function Hand() {
           <img
             src={HandImages.defaultFingers}
             className="absolute object-contain"
+          />
+          <HandVoronoi
+            zone={zone}
+            setZone={setZone}
+            mouseInBox={mouseInBox}
+            setMouseInBox={setMouseInBox}
+            clickedZone={clickedZone}
+            setClickedZone={setClickedZone}
           />
         </div>
       </div>

@@ -1,6 +1,5 @@
-import AbdomenImages from "../../../assets/images/abdomen/AbdomenImages";
-import voronoi_img from "../../../assets/voronoi/voronoi_svg_export.svg";
-import voronoi from "../voronoi/voronoi";
+import voronoi_img_abdomen from "../../../assets/voronoi/voronoi_svg_export_abdomen.svg";
+import voronoiAbdomen from "../voronoi/voronoiAbdomen";
 
 import { useState, useEffect } from "react";
 
@@ -24,7 +23,7 @@ export default function useAbdomenVoronoi({
         mousePos.y < 473
       ) {
         setMouseInBox(true);
-        setZone(voronoi(mousePos.x, mousePos.y) + 1);
+        setZone(voronoiAbdomen(mousePos.x, mousePos.y) + 1);
       } else {
         setMouseInBox(false);
       }
@@ -49,7 +48,7 @@ export default function useAbdomenVoronoi({
 
   return (
     <div className="absolute border-2 w-[10rem] h-[11rem] left-[7rem] bottom-[9.25rem]">
-      <img src={voronoi_img} />
+      <img src={voronoi_img_abdomen} />
       <b className="absolute z-10">
         ({mousePos.x}, {mousePos.y})
       </b>

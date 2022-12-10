@@ -10,15 +10,7 @@ import AllActiveButton from "../components/abdomen/AllActiveButton";
 export default function Abdomen() {
   const [zone, setZone] = useState(-1);
   const [mouseInBox, setMouseInBox] = useState(false);
-  const [clickedZone, setClickedZone] = useState([
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-  ]);
+  const [clickedZone, setClickedZone] = useState(Array(7).fill(false));
 
   return (
     <div

@@ -15,12 +15,14 @@ export default function AllActiveButton({ setClickedZone }) {
 
   return (
     <button
-      className="font-noto text-2xl bg-white rounded-2xl p-[0.5rem] absolute 
+      className={`font-noto text-2xl ${
+        isAllActive ? "bg-blue-500 text-white" : "bg-white"
+      } rounded-2xl p-[0.5rem] absolute 
       border-2 hover:text-white hover:bg-blue-400
-      inset-x-0 bottom-[1.75rem]"
+      inset-x-0 bottom-[1.75rem]`}
       onClick={handleAllActive}
     >
-      ปวดทั่วท้อง
+      {isAllActive ? "ไม่ปวดสักส่วน" : "ปวดทั่วท้อง"}
     </button>
   );
 }

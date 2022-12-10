@@ -23,13 +23,6 @@ export default function Highlight({ zone, mouseInBox, clickedZone }) {
             key={index}
             src={highlight.image}
             className={`absolute object-contain z-1 ${
-              !(zone == index + 1 && mouseInBox && !isNavBarOpen) && "invisible"
-            }`}
-          />
-          <img
-            key={index}
-            src={highlight.image}
-            className={`absolute object-contain z-1 ${
               !clickedZone[index] && "hidden"
             }`}
           />
