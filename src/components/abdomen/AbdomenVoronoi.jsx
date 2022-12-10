@@ -55,7 +55,7 @@ export default function useAbdomenVoronoi({
       </b>
       <b className="pl-[5rem]">{mouseInBox.toString()}</b>
       <p className="pl-[6rem] absolute">{zone}</p>
-      <p className="pl-[15rem] absolute whitespace-nowrap">
+      <p className="pl-[20rem] absolute whitespace-nowrap">
         {clickedZone.map((c) => (
           <li>{c.toString()}</li>
         ))}

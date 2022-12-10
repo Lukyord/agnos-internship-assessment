@@ -5,6 +5,7 @@ import AbdomenVoronoi from "../components/abdomen/AbdomenVoronoi";
 import { useState } from "react";
 import Active from "../components/abdomen/Active";
 import Highlight from "../components/abdomen/Highlight";
+import AllActiveButton from "../components/abdomen/AllActiveButton";
 
 export default function Abdomen() {
   const [zone, setZone] = useState(-1);
@@ -51,6 +52,7 @@ export default function Abdomen() {
             clickedZone={clickedZone}
             setClickedZone={setClickedZone}
           />
+          <AllActiveButton setClickedZone={setClickedZone} />
         </div>
       </div>
       <div className="flex justify-between w-[45rem]">
