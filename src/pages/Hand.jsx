@@ -15,7 +15,7 @@ export default function Hand() {
 
   return (
     <div
-      className="h-screen w-full bg-gray-400 flex flex-col justify-around items-center py-[2rem] 
+      className="h-screen w-full flex flex-col justify-around items-center py-[2rem] 
     bg-gradient-to-r from-blue-900 to-blue-400 "
     >
       <div className="flex flex-col items-center w-[45rem] h-[37rem] bg-white rounded-2xl shadow-2xl">
