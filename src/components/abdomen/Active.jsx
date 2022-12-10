@@ -3,7 +3,7 @@ import { useContext } from "react";
 
 import AbdomenImages from "../../../assets/images/abdomen/AbdomenImages";
 
-export default function Active({ zone, mouseInBox, clickedZone }) {
+export default function Active({ zone, mouseInBox, clickedZone, isAllActive }) {
   const { isNavBarOpen, setIsNavBarOpen } = useContext(isNavBarOpenContext);
   const AbdomenActives = [
     { image: AbdomenImages.ruqActive },
@@ -18,13 +18,22 @@ export default function Active({ zone, mouseInBox, clickedZone }) {
   return (
     <div>
       {AbdomenActives.map((active, index) => (
-        <img
-          key={index}
-          src={active.image}
-          className={`absolute object-contain z-1 ${
-            !(zone == index + 1 && mouseInBox && !isNavBarOpen) && "hidden"
-          }`}
-        />
+        <div>
+          <img
+            key={index}
+            src={active.image}
+            className={`absolute object-contain z-1 ${
+              !(zone == index + 1 && mouseInBox && !isNavBarOpen) && "hidden"
+            }`}
+          />
+          <img
+            key={index}
+            src={active.image}
+            className={`absolute object-contain z-1 ${
+              !clickedZone[index] && "hidden"
+            } ${isAllActive && "hidden"}`}
+          />
+        </div>
       ))}
     </div>
   );

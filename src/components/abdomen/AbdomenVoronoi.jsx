@@ -32,7 +32,7 @@ export default function useAbdomenVoronoi({
     const handleMouseClick = () => {
       if (mouseInBox) {
         setClickedZone((prevState) =>
-          prevState.map((item, idx) => (idx === zone - 1 ? !item : item))
+          prevState.map((item, idx) => (idx === zone - 1 ? !item : false))
         );
       }
     };

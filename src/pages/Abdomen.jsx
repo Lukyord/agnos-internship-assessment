@@ -11,6 +11,7 @@ export default function Abdomen() {
   const [zone, setZone] = useState(-1);
   const [mouseInBox, setMouseInBox] = useState(false);
   const [clickedZone, setClickedZone] = useState(Array(7).fill(false));
+  const [isAllActive, setIsAllActive] = useState(false);
 
   return (
     <div
@@ -30,6 +31,7 @@ export default function Abdomen() {
             zone={zone}
             mouseInBox={mouseInBox}
             clickedZone={clickedZone}
+            isAllActive={isAllActive}
           />
           <Highlight
             zone={zone}
@@ -44,7 +46,11 @@ export default function Abdomen() {
             clickedZone={clickedZone}
             setClickedZone={setClickedZone}
           />
-          <AllActiveButton setClickedZone={setClickedZone} />
+          <AllActiveButton
+            setClickedZone={setClickedZone}
+            isAllActive={isAllActive}
+            setIsAllActive={setIsAllActive}
+          />
         </div>
       </div>
       <div className="flex justify-between w-[45rem]">

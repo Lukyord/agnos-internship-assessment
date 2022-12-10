@@ -1,8 +1,8 @@
-import { useState } from "react";
-
-export default function AllActiveButton({ setClickedZone }) {
-  const [isAllActive, setIsAllActive] = useState(false);
-
+export default function AllActiveButton({
+  setClickedZone,
+  isAllActive,
+  setIsAllActive,
+}) {
   function handleAllActive() {
     if (!isAllActive) {
       setClickedZone((prevState) => prevState.map((item) => (item = true)));

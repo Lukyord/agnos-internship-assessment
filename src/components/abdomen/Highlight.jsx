@@ -1,7 +1,7 @@
+import AbdomenImages from "../../../assets/images/abdomen/AbdomenImages";
+
 import { isNavBarOpenContext } from "../../Helper/Context";
 import { useContext } from "react";
-
-import AbdomenImages from "../../../assets/images/abdomen/AbdomenImages";
 
 export default function Highlight({ zone, mouseInBox, clickedZone }) {
   const { isNavBarOpen, setIsNavBarOpen } = useContext(isNavBarOpenContext);
