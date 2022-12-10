@@ -10,6 +10,8 @@ export default function useAbdomenVoronoi({
   setMouseInBox,
   clickedZone,
   setClickedZone,
+  isAllActive,
+  setIsAllActive,
 }) {
   const [mousePos, setMousePos] = useState({});
 
@@ -31,9 +33,16 @@ export default function useAbdomenVoronoi({
 
     const handleMouseClick = () => {
       if (mouseInBox) {
-        setClickedZone((prevState) =>
-          prevState.map((item, idx) => (idx === zone - 1 ? !item : false))
-        );
+        if (isAllActive) {
+          setIsAllActive(false);
+          setClickedZone((prevState) =>
+            prevState.map((item, idx) => (idx === zone - 1 ? true : false))
+          );
+        } else {
+          setClickedZone((prevState) =>
+            prevState.map((item, idx) => (idx === zone - 1 ? !item : false))
+          );
+        }
       }
     };
 

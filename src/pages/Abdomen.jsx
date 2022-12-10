@@ -41,6 +41,8 @@ export default function Abdomen() {
             setMouseInBox={setMouseInBox}
             clickedZone={clickedZone}
             setClickedZone={setClickedZone}
+            isAllActive={isAllActive}
+            setIsAllActive={setIsAllActive}
           />
           <AllActiveButton
             setClickedZone={setClickedZone}

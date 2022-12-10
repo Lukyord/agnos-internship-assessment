@@ -15,7 +15,7 @@ export default function Others({ setClickedZone, isOthers, setIsOthers }) {
         isOthers ? "bg-blue-500 text-white" : "bg-white"
       } rounded-2xl p-[0.5rem] absolute 
       border-2 hover:text-white hover:bg-blue-400
-      inset-x-0 bottom-[1.75rem]`}
+      inset-x-0 bottom-[0.9rem]`}
       onClick={handleOthers}
     >
       ข้ออื่นๆ หรือไม่ได้ปวดบริเวณข้อ
