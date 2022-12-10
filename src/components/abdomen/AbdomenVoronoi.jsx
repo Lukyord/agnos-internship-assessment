@@ -37,22 +37,6 @@ export default function useAbdomenVoronoi({
         );
       }
     };
-    //   if (mouseInBox) {
-    //     setClickedZone(
-    //       clickedZone.map((c) => {
-    //         if (c.id === zone) {
-    //           return { ...c, clicked: !c.clicked };
-    //         } else {
-    //           return c;
-    //         }
-    //       })
-    //     );
-    //     console.log(clickedZone);
-    //   }
-    // };
-    //   const HanldeCheck = (index) => {
-    //     setcheckBoxState(prevState => prevState.map((item, idx) => idx === index ? !item : item))
-    // };
 
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("click", handleMouseClick);

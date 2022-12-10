@@ -3,7 +3,7 @@ import { useContext } from "react";
 
 import AbdomenImages from "../../../assets/images/abdomen/AbdomenImages";
 
-export default function Highlight({ zone, mouseInBox }) {
+export default function Highlight({ zone, mouseInBox, clickedZone }) {
   const { isNavBarOpen, setIsNavBarOpen } = useContext(isNavBarOpenContext);
   const AbdomenHighlights = [
     { image: AbdomenImages.ruqHighlight },
@@ -18,13 +18,22 @@ export default function Highlight({ zone, mouseInBox }) {
   return (
     <div>
       {AbdomenHighlights.map((highlight, index) => (
-        <img
-          key={index}
-          src={highlight.image}
-          className={`absolute object-contain z-1 ${
-            !(zone == index + 1 && mouseInBox && !isNavBarOpen) && "invisible"
-          }`}
-        />
+        <div>
+          <img
+            key={index}
+            src={highlight.image}
+            className={`absolute object-contain z-1 ${
+              !(zone == index + 1 && mouseInBox && !isNavBarOpen) && "invisible"
+            }`}
+          />
+          <img
+            key={index}
+            src={highlight.image}
+            className={`absolute object-contain z-1 ${
+              !clickedZone[index] && "hidden"
+            }`}
+          />
+        </div>
       ))}
     </div>
   );

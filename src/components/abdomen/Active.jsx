@@ -23,9 +23,11 @@ export default function Active({ zone, mouseInBox, clickedZone }) {
           src={active.image}
           className={`absolute object-contain z-1 ${
             !(zone == index + 1 && mouseInBox && !isNavBarOpen) && "hidden"
-          } ${clickedZone[index] && "visible"}`}
+          }`}
         />
       ))}
     </div>
   );
 }
+
+// ${clickedZone[index] && "visible"}
