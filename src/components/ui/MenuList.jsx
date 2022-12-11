@@ -1,7 +1,7 @@
 import MenusData from "../ui/Menus.json";
 import { Link } from "react-router-dom";
 
-export default function MenuList({ isOpen, setSymtomps, symtomps }) {
+export default function MenuList({ isOpen }) {
   const Menus = MenusData.Menus;
 
   return (

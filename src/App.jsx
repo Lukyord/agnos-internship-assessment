@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Layout from "./components/layout/Layout";
 import Hand from "./pages/Hand";
@@ -18,18 +18,22 @@ function App() {
   const [isAllActive, setIsAllActive] = useState(false);
   const [clickedZoneHand, setClickedZoneHand] = useState(Array(3).fill(false));
   const [isOthers, setIsOthers] = useState(false);
+  const [symtompCount, setSymtompCount] = useState(0);
+  useEffect(() => {
+    console.log(symtompCount);
+  }, []);
 
   return (
     <BrowserRouter>
-      <Layout>
-        <symtompContext.Provider
-          value={{
-            abdomenSymtomp,
-            setAbdomenSymtomp,
-            handSymtomp,
-            setHandSymtomp,
-          }}
-        >
+      <symtompContext.Provider
+        value={{
+          abdomenSymtomp,
+          setAbdomenSymtomp,
+          handSymtomp,
+          setHandSymtomp,
+        }}
+      >
+        <Layout symtompCount={symtompCount} setSymtompCount={setSymtompCount}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route
@@ -66,8 +70,8 @@ function App() {
               }
             />
           </Routes>
-        </symtompContext.Provider>
-      </Layout>
+        </Layout>
+      </symtompContext.Provider>
     </BrowserRouter>
   );
 }

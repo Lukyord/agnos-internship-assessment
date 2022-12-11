@@ -1,13 +1,14 @@
-import { useState } from "react";
-
 import Logo from "../ui/Logo";
 import MenuList from "../ui/MenuList";
 import NavBarArrow from "../ui/NavBarArrow";
 import Symtomps from "../ui/Symtomps";
 
-export default function MainNavigation({ isNavBarOpen, setIsNavBarOpen }) {
-  const [symtomps, setSymtomps] = useState([]);
-
+export default function MainNavigation({
+  isNavBarOpen,
+  setIsNavBarOpen,
+  symtompCount,
+  setSymtompCount,
+}) {
   return (
     <div className="flex">
       <div
@@ -17,12 +18,8 @@ export default function MainNavigation({ isNavBarOpen, setIsNavBarOpen }) {
       >
         <NavBarArrow setOpen={setIsNavBarOpen} isOpen={isNavBarOpen} />
         <Logo isOpen={isNavBarOpen} />
-        <MenuList
-          setSymtomps={setIsNavBarOpen}
-          isOpen={isNavBarOpen}
-          symtomps={symtomps}
-        />
-        <Symtomps isOpen={isNavBarOpen} symtomps={symtomps} />
+        <MenuList isOpen={isNavBarOpen} />
+        <Symtomps isOpen={isNavBarOpen} count={symtompCount} />
       </div>
     </div>
   );
