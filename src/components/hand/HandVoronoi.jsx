@@ -52,6 +52,11 @@ export default function HandVoronoi({
     };
   });
 
+  useEffect(() => {
+    if (clickedZone.every((item) => item === false))
+      setHandSymtomp("ไม่มีอาการปวดข้อนิ้ว");
+  }, [clickedZone]);
+
   return (
     <div
       className={`absolute border-2 w-[16rem] h-[17rem] left-[5rem] bottom-[11rem] ${

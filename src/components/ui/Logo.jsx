@@ -2,9 +2,13 @@ import icon from "../../../assets/icons/diagnosis_icon.png";
 
 import { Link } from "react-router-dom";
 
-export default function Logo({ isOpen }) {
+export default function Logo({ isOpen, setIsNavBarOpen }) {
+  function handleClick() {
+    setIsNavBarOpen(false);
+  }
+
   return (
-    <Link to="/">
+    <Link to="/" onClick={handleClick}>
       <div className="flex gap-x-4 pt-[1rem] pl-[1rem]">
         <img
           src={icon}

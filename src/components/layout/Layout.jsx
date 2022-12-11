@@ -1,16 +1,12 @@
 import MainNavigation from "./MainNavigation";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Overlay from "./Overlay";
 
 import { isNavBarOpenContext } from "../../Helper/Context";
 
 export default function Layout(props) {
   const [isNavBarOpen, setIsNavBarOpen] = useState(false);
-
-  useEffect(() => {
-    console.log("from layout", props.symtompCount);
-  }, []);
 
   return (
     <isNavBarOpenContext.Provider
@@ -25,8 +21,13 @@ export default function Layout(props) {
           setIsNavBarOpen={setIsNavBarOpen}
           symtompCount={props.symtompCount}
           setSymtompCount={props.setSymtompCount}
+          handSymtomp={props.handSymtomp}
+          abdomenSymtomp={props.abdomenSymtomp}
         />
-        <Overlay isNavBarOpen={isNavBarOpen} />
+        <Overlay
+          isNavBarOpen={isNavBarOpen}
+          setIsNavBarOpen={setIsNavBarOpen}
+        />
         <div className={`grow`}>{props.children}</div>
       </div>
     </isNavBarOpenContext.Provider>

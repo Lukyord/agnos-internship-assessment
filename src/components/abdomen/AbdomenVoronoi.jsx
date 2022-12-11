@@ -60,6 +60,11 @@ export default function useAbdomenVoronoi({
     };
   });
 
+  useEffect(() => {
+    if (clickedZone.every((item) => item === false))
+      setAbdomenSymtomp("ไม่มีอาการปวดท้อง");
+  }, [clickedZone]);
+
   return (
     <div
       className={`absolute border-2 w-[10rem] h-[11rem] left-[7rem] bottom-[9.25rem] ${

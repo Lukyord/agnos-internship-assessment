@@ -19,9 +19,6 @@ function App() {
   const [clickedZoneHand, setClickedZoneHand] = useState(Array(3).fill(false));
   const [isOthers, setIsOthers] = useState(false);
   const [symtompCount, setSymtompCount] = useState(0);
-  useEffect(() => {
-    console.log(symtompCount);
-  }, []);
 
   return (
     <BrowserRouter>
@@ -33,7 +30,12 @@ function App() {
           setHandSymtomp,
         }}
       >
-        <Layout symtompCount={symtompCount} setSymtompCount={setSymtompCount}>
+        <Layout
+          symtompCount={symtompCount}
+          setSymtompCount={setSymtompCount}
+          abdomenSymtomp={abdomenSymtomp}
+          handSymtomp={handSymtomp}
+        >
           <Routes>
             <Route path="/" element={<Home />} />
             <Route
@@ -45,6 +47,7 @@ function App() {
                   setClickedZone={setClickedZoneAbdomen}
                   isAllActive={isAllActive}
                   setIsAllActive={setIsAllActive}
+                  setSymtompCount={setSymtompCount}
                 />
               }
             />
@@ -57,6 +60,7 @@ function App() {
                   setClickedZone={setClickedZoneHand}
                   isOthers={isOthers}
                   setIsOthers={setIsOthers}
+                  setSymtompCount={setSymtompCount}
                 />
               }
             />

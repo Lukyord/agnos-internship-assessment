@@ -8,6 +8,8 @@ export default function MainNavigation({
   setIsNavBarOpen,
   symtompCount,
   setSymtompCount,
+  abdomenSymtomp,
+  handSymtomp,
 }) {
   return (
     <div className="flex">
@@ -16,10 +18,17 @@ export default function MainNavigation({
           isNavBarOpen ? "w-[30rem]" : "w-[8rem]"
         } duration-300 h-screen bg-blue-900 relative shadow-2xl z-20`}
       >
-        <NavBarArrow setOpen={setIsNavBarOpen} isOpen={isNavBarOpen} />
-        <Logo isOpen={isNavBarOpen} />
-        <MenuList isOpen={isNavBarOpen} />
-        <Symtomps isOpen={isNavBarOpen} count={symtompCount} />
+        <NavBarArrow setIsNavBarOpen={setIsNavBarOpen} isOpen={isNavBarOpen} />
+        <Logo isOpen={isNavBarOpen} setIsNavBarOpen={setIsNavBarOpen} />
+        <MenuList isOpen={isNavBarOpen} setIsNavBarOpen={setIsNavBarOpen} />
+        <Symtomps
+          isOpen={isNavBarOpen}
+          symtompCount={symtompCount}
+          setSymtompCount={setSymtompCount}
+          abdomenSymtomp={abdomenSymtomp}
+          handSymtomp={handSymtomp}
+          setIsNavBarOpen={setIsNavBarOpen}
+        />
       </div>
     </div>
   );
