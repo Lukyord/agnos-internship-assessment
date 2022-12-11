@@ -2,14 +2,17 @@ export default function AllActiveButton({
   setClickedZone,
   isAllActive,
   setIsAllActive,
+  setAbdomenSymtomp,
 }) {
   function handleAllActive() {
     if (!isAllActive) {
       setClickedZone((prevState) => prevState.map((item) => (item = true)));
       setIsAllActive(true);
+      setAbdomenSymtomp("ปวดทั่วท้อง");
     } else {
       setClickedZone((prevState) => prevState.map((item) => (item = false)));
       setIsAllActive(false);
+      setAbdomenSymtomp("ไม่มีอาการปวดท้อง");
     }
   }
 

@@ -9,7 +9,12 @@ export default function Layout(props) {
   const [isNavBarOpen, setIsNavBarOpen] = useState(false);
 
   return (
-    <isNavBarOpenContext.Provider value={{ isNavBarOpen, setIsNavBarOpen }}>
+    <isNavBarOpenContext.Provider
+      value={{
+        isNavBarOpen,
+        setIsNavBarOpen,
+      }}
+    >
       <div className="flex">
         <MainNavigation
           isNavBarOpen={isNavBarOpen}

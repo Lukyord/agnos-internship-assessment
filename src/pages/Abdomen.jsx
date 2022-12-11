@@ -6,8 +6,9 @@ import { useState } from "react";
 import Active from "../components/abdomen/Active";
 import Highlight from "../components/abdomen/Highlight";
 import AllActiveButton from "../components/abdomen/AllActiveButton";
+import ButtonAbdomen from "../components/abdomen/ButtonAbdomen";
 
-export default function Abdomen() {
+export default function Abdomen({ abdomenSymptomp, setAbdomenSymtomp }) {
   const [zone, setZone] = useState(-1);
   const [mouseInBox, setMouseInBox] = useState(false);
   const [clickedZone, setClickedZone] = useState(Array(7).fill(false));
@@ -48,40 +49,11 @@ export default function Abdomen() {
             setClickedZone={setClickedZone}
             isAllActive={isAllActive}
             setIsAllActive={setIsAllActive}
+            setAbdomenSymtomp={setAbdomenSymtomp}
           />
         </div>
       </div>
-      <div className="flex justify-between w-[45rem]">
-        <div className="w-2/3 flex justify-between">
-          <button className="font-noto text-2xl bg-white rounded-2xl shadow-2xl p-[0.5rem] grow mr-[2rem]">
-            ตรวจมือ
-          </button>
-          <button className="font-noto text-2xl bg-white rounded-2xl shadow-2xl p-[0.5rem] grow mr-[2rem]">
-            ดูผลตรวจ
-          </button>
-        </div>
-        {/* <button className="font-noto text-sm bg-white rounded-2xl shadow-2xl p-[0.5rem] w-[10rem] h-[2rem]">
-          เปิด Voronoi Overlay
-        </button> */}
-      </div>
+      <ButtonAbdomen />
     </div>
   );
-}
-
-{
-  /* <Voronoi
-        extent={[
-          [493, 300],
-          [648, 473],
-        ]}
-        nodes={[
-          { x: 790, y: 360, style: { stroke: "blue" } },
-          { x: 823, y: 341 },
-          { x: 852, y: 362 },
-          { x: 820, y: 393 },
-          { x: 791, y: 417 },
-          { x: 820, y: 436 },
-          { x: 859, y: 416 },
-        ]}
-      /> */
 }

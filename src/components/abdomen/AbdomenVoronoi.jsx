@@ -36,7 +36,7 @@ export default function useAbdomenVoronoi({
         if (isAllActive) {
           setIsAllActive(false);
           setClickedZone((prevState) =>
-            prevState.map((item, idx) => (idx === zone - 1 ? true : false))
+            prevState.map((idx) => (idx === zone - 1 ? true : false))
           );
         } else {
           setClickedZone((prevState) =>
