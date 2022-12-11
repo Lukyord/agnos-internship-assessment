@@ -7,11 +7,14 @@ import Highlight from "../components/hand/Highlight";
 import Active from "../components/hand/Active";
 import Others from "../components/hand/Others";
 
-export default function Hand() {
+export default function Hand({
+  clickedZone,
+  setClickedZone,
+  isOthers,
+  setIsOthers,
+}) {
   const [zone, setZone] = useState(-1);
   const [mouseInBox, setMouseInBox] = useState(false);
-  const [clickedZone, setClickedZone] = useState(Array(3).fill(false));
-  const [isOthers, setIsOthers] = useState(false);
 
   return (
     <div

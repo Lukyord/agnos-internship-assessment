@@ -8,11 +8,16 @@ import Highlight from "../components/abdomen/Highlight";
 import AllActiveButton from "../components/abdomen/AllActiveButton";
 import ButtonAbdomen from "../components/abdomen/ButtonAbdomen";
 
-export default function Abdomen({ abdomenSymptomp, setAbdomenSymtomp }) {
+export default function Abdomen({
+  abdomenSymptomp,
+  setAbdomenSymtomp,
+  clickedZone,
+  setClickedZone,
+  isAllActive,
+  setIsAllActive,
+}) {
   const [zone, setZone] = useState(-1);
   const [mouseInBox, setMouseInBox] = useState(false);
-  const [clickedZone, setClickedZone] = useState(Array(7).fill(false));
-  const [isAllActive, setIsAllActive] = useState(false);
 
   return (
     <div

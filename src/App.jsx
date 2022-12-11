@@ -12,6 +12,12 @@ import { symtompContext } from "./Helper/Context";
 function App() {
   const [abdomenSymptomp, setAbdomenSymtomp] = useState("");
   const [handSymtomp, setHandSymtomp] = useState("");
+  const [clickedZoneAbdomen, setClickedZoneAbdomen] = useState(
+    Array(7).fill(false)
+  );
+  const [isAllActive, setIsAllActive] = useState(false);
+  const [clickedZoneHand, setClickedZoneHand] = useState(Array(3).fill(false));
+  const [isOthers, setIsOthers] = useState(false);
 
   return (
     <BrowserRouter>
@@ -32,6 +38,12 @@ function App() {
                 <Abdomen
                   abdomenSymptomp={abdomenSymptomp}
                   setAbdomenSymtomp={setAbdomenSymtomp}
+                  clickedZone={clickedZoneAbdomen}
+                  setClickedZone={setClickedZoneAbdomen}
+                  isAllActive={isAllActive}
+                  setIsAllActive={setIsAllActive}
+                  isOthers={isOthers}
+                  setIsOthers={setIsOthers}
                 />
               }
             />
@@ -41,6 +53,8 @@ function App() {
                 <Hand
                   handSymtomp={handSymtomp}
                   setHandSymtomp={setHandSymtomp}
+                  clickedZone={clickedZoneHand}
+                  setClickedZone={setClickedZoneHand}
                 />
               }
             />
