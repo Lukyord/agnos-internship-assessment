@@ -1,11 +1,18 @@
-export default function Others({ setClickedZone, isOthers, setIsOthers }) {
+export default function Others({
+  setClickedZone,
+  isOthers,
+  setIsOthers,
+  setHandSymtomp,
+}) {
   function handleOthers() {
     if (!isOthers) {
       setClickedZone((prevState) => prevState.map((item) => (item = false)));
       setIsOthers(true);
+      setHandSymtomp("ข้ออื่นๆ หรือ ไม่ปวดบริเวณข้อ");
     } else {
       setClickedZone((prevState) => prevState.map((item) => (item = false)));
       setIsOthers(false);
+      setHandSymtomp("ไม่มีอาการปวดข้อนิ้ว");
     }
   }
 

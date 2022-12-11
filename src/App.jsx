@@ -36,7 +36,6 @@ function App() {
               path="/abdomen"
               element={
                 <Abdomen
-                  abdomenSymptomp={abdomenSymptomp}
                   setAbdomenSymtomp={setAbdomenSymtomp}
                   clickedZone={clickedZoneAbdomen}
                   setClickedZone={setClickedZoneAbdomen}
@@ -49,7 +48,6 @@ function App() {
               path="/hand"
               element={
                 <Hand
-                  handSymtomp={handSymtomp}
                   setHandSymtomp={setHandSymtomp}
                   clickedZone={clickedZoneHand}
                   setClickedZone={setClickedZoneHand}

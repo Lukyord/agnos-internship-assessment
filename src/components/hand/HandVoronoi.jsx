@@ -3,6 +3,7 @@ import voronoi_img_hand from "../../../assets/voronoi/voronoi_svg_export_hand.sv
 import voronoiHand from "../voronoi/voronoiHand";
 
 import { useState, useEffect } from "react";
+import resultSymtompHand from "./resultSymtompHand";
 
 export default function HandVoronoi({
   zone,
@@ -12,6 +13,7 @@ export default function HandVoronoi({
   clickedZone,
   setClickedZone,
   setIsOthers,
+  setHandSymtomp,
 }) {
   const [mousePos, setMousePos] = useState({});
 
@@ -37,6 +39,7 @@ export default function HandVoronoi({
           prevState.map((item, idx) => (idx === zone - 1 ? !item : false))
         );
         setIsOthers(false);
+        setHandSymtomp(resultSymtompHand(zone));
       }
     };
 

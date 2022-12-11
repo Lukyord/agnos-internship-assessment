@@ -13,6 +13,7 @@ export default function Hand({
   setClickedZone,
   isOthers,
   setIsOthers,
+  setHandSymtomp,
 }) {
   const [zone, setZone] = useState(-1);
   const [mouseInBox, setMouseInBox] = useState(false);
@@ -45,11 +46,13 @@ export default function Hand({
             clickedZone={clickedZone}
             setClickedZone={setClickedZone}
             setIsOthers={setIsOthers}
+            setHandSymtomp={setHandSymtomp}
           />
           <Others
             setClickedZone={setClickedZone}
             isOthers={isOthers}
             setIsOthers={setIsOthers}
+            setHandSymtomp={setHandSymtomp}
           />
         </div>
       </div>

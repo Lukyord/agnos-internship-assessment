@@ -1,6 +1,6 @@
 import voronoi_img_abdomen from "../../../assets/voronoi/voronoi_svg_export_abdomen.svg";
 import voronoiAbdomen from "../voronoi/voronoiAbdomen";
-import resultSymtomp from "./resultSymtomp";
+import resultSymtompAbdomen from "./resultSymtompAbdomen";
 
 import { useState, useEffect } from "react";
 
@@ -40,14 +40,12 @@ export default function useAbdomenVoronoi({
           setClickedZone((prevState) =>
             prevState.map((idx) => (idx === zone - 1 ? true : false))
           );
-          setAbdomenSymtomp(resultSymtomp(zone));
-          console.log(resultSymtomp(zone));
+          setAbdomenSymtomp(resultSymtompAbdomen(zone));
         } else {
           setClickedZone((prevState) =>
             prevState.map((item, idx) => (idx === zone - 1 ? !item : false))
           );
-          setAbdomenSymtomp(resultSymtomp(zone));
-          console.log(resultSymtomp(zone));
+          setAbdomenSymtomp(resultSymtompAbdomen(zone));
         }
       }
     };
