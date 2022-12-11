@@ -14,6 +14,7 @@ export default function useAbdomenVoronoi({
   isAllActive,
   setIsAllActive,
   setAbdomenSymtomp,
+  showVoronoiOverlay,
 }) {
   const [mousePos, setMousePos] = useState({});
 
@@ -60,7 +61,11 @@ export default function useAbdomenVoronoi({
   });
 
   return (
-    <div className="absolute border-2 w-[10rem] h-[11rem] left-[7rem] bottom-[9.25rem]">
+    <div
+      className={`absolute border-2 w-[10rem] h-[11rem] left-[7rem] bottom-[9.25rem] ${
+        !showVoronoiOverlay && "hidden"
+      }`}
+    >
       <img src={voronoi_img_abdomen} />
       <b className="absolute z-10">
         ({mousePos.x}, {mousePos.y})

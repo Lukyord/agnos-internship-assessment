@@ -9,7 +9,6 @@ import AllActiveButton from "../components/abdomen/AllActiveButton";
 import ButtonAbdomen from "../components/abdomen/ButtonAbdomen";
 
 export default function Abdomen({
-  abdomenSymptomp,
   setAbdomenSymtomp,
   clickedZone,
   setClickedZone,
@@ -18,6 +17,7 @@ export default function Abdomen({
 }) {
   const [zone, setZone] = useState(-1);
   const [mouseInBox, setMouseInBox] = useState(false);
+  const [showVoronoiOverlay, setShowVoronoiOverlay] = useState(false);
 
   return (
     <div
@@ -50,6 +50,7 @@ export default function Abdomen({
             isAllActive={isAllActive}
             setIsAllActive={setIsAllActive}
             setAbdomenSymtomp={setAbdomenSymtomp}
+            showVoronoiOverlay={showVoronoiOverlay}
           />
           <AllActiveButton
             setClickedZone={setClickedZone}
@@ -59,7 +60,10 @@ export default function Abdomen({
           />
         </div>
       </div>
-      <ButtonAbdomen />
+      <ButtonAbdomen
+        setShowVoronoiOverlay={setShowVoronoiOverlay}
+        showVoronoiOverlay={showVoronoiOverlay}
+      />
     </div>
   );
 }

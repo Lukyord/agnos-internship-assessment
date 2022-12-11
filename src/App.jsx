@@ -10,7 +10,7 @@ import Result from "./pages/Result";
 import { symtompContext } from "./Helper/Context";
 
 function App() {
-  const [abdomenSymptomp, setAbdomenSymtomp] = useState("ไม่มีอาการปวดท้อง");
+  const [abdomenSymtomp, setAbdomenSymtomp] = useState("ไม่มีอาการปวดท้อง");
   const [handSymtomp, setHandSymtomp] = useState("ไม่มีอาการปวดข้อนิ้ว");
   const [clickedZoneAbdomen, setClickedZoneAbdomen] = useState(
     Array(7).fill(false)
@@ -24,7 +24,7 @@ function App() {
       <Layout>
         <symtompContext.Provider
           value={{
-            abdomenSymptomp,
+            abdomenSymtomp,
             setAbdomenSymtomp,
             handSymtomp,
             setHandSymtomp,
@@ -60,7 +60,7 @@ function App() {
               path="/result"
               element={
                 <Result
-                  abdomenSymptomp={abdomenSymptomp}
+                  abdomenSymtomp={abdomenSymtomp}
                   handSymtomp={handSymtomp}
                 />
               }

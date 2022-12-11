@@ -17,6 +17,7 @@ export default function Hand({
 }) {
   const [zone, setZone] = useState(-1);
   const [mouseInBox, setMouseInBox] = useState(false);
+  const [showVoronoiOverlay, setShowVoronoiOverlay] = useState(false);
 
   return (
     <div
@@ -47,6 +48,7 @@ export default function Hand({
             setClickedZone={setClickedZone}
             setIsOthers={setIsOthers}
             setHandSymtomp={setHandSymtomp}
+            showVoronoiOverlay={showVoronoiOverlay}
           />
           <Others
             setClickedZone={setClickedZone}
@@ -56,7 +58,10 @@ export default function Hand({
           />
         </div>
       </div>
-      <ButtonHand />
+      <ButtonHand
+        setShowVoronoiOverlay={setShowVoronoiOverlay}
+        showVoronoiOverlay={showVoronoiOverlay}
+      />
     </div>
   );
 }

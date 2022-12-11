@@ -1,9 +1,8 @@
 import voronoi_img_hand from "../../../assets/voronoi/voronoi_svg_export_hand.svg";
-
 import voronoiHand from "../voronoi/voronoiHand";
+import resultSymtompHand from "./resultSymtompHand";
 
 import { useState, useEffect } from "react";
-import resultSymtompHand from "./resultSymtompHand";
 
 export default function HandVoronoi({
   zone,
@@ -14,6 +13,7 @@ export default function HandVoronoi({
   setClickedZone,
   setIsOthers,
   setHandSymtomp,
+  showVoronoiOverlay,
 }) {
   const [mousePos, setMousePos] = useState({});
 
@@ -53,7 +53,11 @@ export default function HandVoronoi({
   });
 
   return (
-    <div className="absolute border-2 w-[16rem] h-[17rem] left-[5rem] bottom-[11rem]">
+    <div
+      className={`absolute border-2 w-[16rem] h-[17rem] left-[5rem] bottom-[11rem] ${
+        !showVoronoiOverlay && "hidden"
+      }`}
+    >
       <img src={voronoi_img_hand} />
       <b className="absolute z-10">
         ({mousePos.x}, {mousePos.y})
