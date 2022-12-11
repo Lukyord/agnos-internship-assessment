@@ -20,14 +20,14 @@ export default function Active({ zone, mouseInBox, clickedZone, isAllActive }) {
       {AbdomenActives.map((active, index) => (
         <div>
           <img
-            key={index}
+            key={"ab_active_hover" + index}
             src={active.image}
             className={`absolute object-contain z-1 ${
               !(zone == index + 1 && mouseInBox && !isNavBarOpen) && "hidden"
             }`}
           />
           <img
-            key={index}
+            key={"ab_active_highlight" + index}
             src={active.image}
             className={`absolute object-contain z-1 ${
               !clickedZone[index] && "hidden"

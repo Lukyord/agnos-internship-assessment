@@ -10,8 +10,8 @@ import Result from "./pages/Result";
 import { symtompContext } from "./Helper/Context";
 
 function App() {
-  const [abdomenSymptomp, setAbdomenSymtomp] = useState("");
-  const [handSymtomp, setHandSymtomp] = useState("");
+  const [abdomenSymptomp, setAbdomenSymtomp] = useState("ไม่มีอาการปวดท้อง");
+  const [handSymtomp, setHandSymtomp] = useState("ไม่มีอาการปวดข้อนิ้ว");
   const [clickedZoneAbdomen, setClickedZoneAbdomen] = useState(
     Array(7).fill(false)
   );
@@ -42,8 +42,6 @@ function App() {
                   setClickedZone={setClickedZoneAbdomen}
                   isAllActive={isAllActive}
                   setIsAllActive={setIsAllActive}
-                  isOthers={isOthers}
-                  setIsOthers={setIsOthers}
                 />
               }
             />
@@ -55,12 +53,19 @@ function App() {
                   setHandSymtomp={setHandSymtomp}
                   clickedZone={clickedZoneHand}
                   setClickedZone={setClickedZoneHand}
+                  isOthers={isOthers}
+                  setIsOthers={setIsOthers}
                 />
               }
             />
             <Route
               path="/result"
-              element={<Result abdomenSymptomp={abdomenSymptomp} />}
+              element={
+                <Result
+                  abdomenSymptomp={abdomenSymptomp}
+                  handSymtomp={handSymtomp}
+                />
+              }
             />
           </Routes>
         </symtompContext.Provider>

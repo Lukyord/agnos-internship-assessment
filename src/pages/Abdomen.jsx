@@ -49,6 +49,7 @@ export default function Abdomen({
             setClickedZone={setClickedZone}
             isAllActive={isAllActive}
             setIsAllActive={setIsAllActive}
+            setAbdomenSymtomp={setAbdomenSymtomp}
           />
           <AllActiveButton
             setClickedZone={setClickedZone}

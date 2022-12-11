@@ -12,7 +12,7 @@ export default function Highlight({ clickedZone }) {
       {HandHighlights.map((highlight, index) => (
         <div>
           <img
-            key={index}
+            key={"hand_highlight" + index}
             src={highlight.image}
             className={`absolute object-contain z-1 ${
               !clickedZone[index] && "hidden"

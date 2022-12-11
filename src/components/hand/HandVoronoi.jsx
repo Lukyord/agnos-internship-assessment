@@ -58,8 +58,8 @@ export default function HandVoronoi({
       <b className="pl-[5rem]">{mouseInBox.toString()}</b>
       <p className="pl-[6rem] absolute">{zone}</p>
       <p className="pl-[20rem] absolute whitespace-nowrap">
-        {clickedZone.map((c) => (
-          <li>{c.toString()}</li>
+        {clickedZone.map((c, idx) => (
+          <li key={"hand_admin" + idx}>{c.toString()}</li>
         ))}
       </p>
     </div>

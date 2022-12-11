@@ -16,14 +16,14 @@ export default function Active({ zone, mouseInBox, clickedZone, isAllActive }) {
       {HandHighlights.map((active, index) => (
         <div>
           <img
-            key={index}
+            key={"hand_active_hover" + index}
             src={active.image}
             className={`absolute object-contain z-1 ${
               !(zone == index + 1 && mouseInBox && !isNavBarOpen) && "hidden"
             }`}
           />
           <img
-            key={index}
+            key={"hand_active_click" + index}
             src={active.image}
             className={`absolute object-contain z-1 ${
               !clickedZone[index] && "hidden"

@@ -16,7 +16,7 @@ export default function Highlight({ clickedZone }) {
       {AbdomenHighlights.map((highlight, index) => (
         <div>
           <img
-            key={index}
+            key={"ab_highlight" + index}
             src={highlight.image}
             className={`absolute object-contain z-1 ${
               !clickedZone[index] && "hidden"
