@@ -7,12 +7,12 @@ export default function Others({
   function handleOthers() {
     if (!isOthers) {
       setClickedZone((prevState) => prevState.map((item) => (item = false)));
-      setIsOthers(true);
       setHandSymtomp("ข้ออื่นๆ หรือ ไม่ปวดบริเวณข้อ");
-    } else {
+      setIsOthers(true);
+    } else if (isOthers) {
       setClickedZone((prevState) => prevState.map((item) => (item = false)));
-      setIsOthers(false);
       setHandSymtomp("ไม่มีอาการปวดข้อนิ้ว");
+      setIsOthers(false);
     }
   }
 

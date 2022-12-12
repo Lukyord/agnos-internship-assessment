@@ -5,6 +5,7 @@ export default function AllActiveButton({
   setAbdomenSymtomp,
 }) {
   function handleAllActive() {
+    console.log(isAllActive);
     if (!isAllActive) {
       setClickedZone((prevState) => prevState.map((item) => (item = true)));
       setIsAllActive(true);

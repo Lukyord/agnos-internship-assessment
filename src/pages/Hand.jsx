@@ -14,6 +14,7 @@ export default function Hand({
   isOthers,
   setIsOthers,
   setHandSymtomp,
+  handSymtomp,
 }) {
   const [zone, setZone] = useState(-1);
   const [mouseInBox, setMouseInBox] = useState(false);

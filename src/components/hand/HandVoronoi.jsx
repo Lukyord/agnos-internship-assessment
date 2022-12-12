@@ -14,6 +14,7 @@ export default function HandVoronoi({
   setIsOthers,
   setHandSymtomp,
   showVoronoiOverlay,
+  isOthers,
 }) {
   const [mousePos, setMousePos] = useState({});
 
@@ -51,11 +52,6 @@ export default function HandVoronoi({
       window.removeEventListener("click", handleMouseClick);
     };
   });
-
-  useEffect(() => {
-    if (clickedZone.every((item) => item === false))
-      setHandSymtomp("ไม่มีอาการปวดข้อนิ้ว");
-  }, [clickedZone]);
 
   return (
     <div

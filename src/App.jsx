@@ -61,6 +61,7 @@ function App() {
                   isOthers={isOthers}
                   setIsOthers={setIsOthers}
                   setSymtompCount={setSymtompCount}
+                  handSymtomp={handSymtomp}
                 />
               }
             />
